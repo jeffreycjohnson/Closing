@@ -20,13 +20,13 @@ public class DoorClose : MonoBehaviour
 	
 	void Update()
     {
+        transform.GetComponent<BoxCollider>().enabled = (elapsed / CloseTime > 0.8) || !SlideController.Sliding;
         if (!doneMoving)
         {
             elapsed += Time.deltaTime;
             Vector4 c = Vector4.Lerp(color, new Vector4(0.0f, 0.0f), elapsed/CloseTime);
             transform.Translate(0, -closeDist * Time.deltaTime / CloseTime, 0);
             RenderSettings.ambientLight = new Color(c.x, c.y, c.z, c.w);
-            transform.GetComponent<BoxCollider>().enabled = (elapsed / CloseTime > 0.8) || !SlideController.Sliding;
             if (transform.position.y < endY)
             {
                 doneMoving = true;
