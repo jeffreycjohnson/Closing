@@ -23,6 +23,7 @@ public class Level : MonoBehaviour
 
     void Update()
     {
+        Screen.lockCursor = true;
         if (!_found && GameObject.Find("Player").transform.position.x > transform.position.x)
         {
             _found = true;
