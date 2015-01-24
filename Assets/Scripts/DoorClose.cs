@@ -5,6 +5,7 @@ public class DoorClose : MonoBehaviour
 {
 
     public float CloseTime = 10f; // time to close in seconds
+    private float elapsed = 0f;
     public float closeDist = 1f; // How far the door moves (
 
     private float endY;
@@ -12,7 +13,7 @@ public class DoorClose : MonoBehaviour
     private Vector4 color = new Vector4(0.5f, 0.55f, 0.45f, 1f);
 
 	void Start()
-    {
+	{
         endY = transform.position.y;
         transform.transform.transform.Translate(0, closeDist, 0);
 	}
@@ -21,9 +22,10 @@ public class DoorClose : MonoBehaviour
     {
         if (!doneMoving)
         {
-            color *= 0.995f;
+            elapsed += Time.deltaTime;
+            Vector4 c = Vector4.Lerp(color, new Vector4(0.0f, 0.0f), elapsed/CloseTime);
             transform.Translate(0, -closeDist * Time.deltaTime / CloseTime, 0);
-            RenderSettings.ambientLight = new Color(color.x, color.y, color.z, color.w);
+            RenderSettings.ambientLight = new Color(c.x, c.y, c.z, c.w);
             if (transform.position.y < endY)
             {
                 doneMoving = true;
