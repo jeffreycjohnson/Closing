@@ -9,7 +9,7 @@ public class DoorClose : MonoBehaviour
     public float closeDist = 1f; // How far the door moves (
 
     private float endY;
-    private bool doneMoving = false;
+    public bool doneMoving = true;
     private Vector4 color = new Vector4(0.5f, 0.55f, 0.45f, 1f);
 
 	void Start()
@@ -32,7 +32,6 @@ public class DoorClose : MonoBehaviour
                 doneMoving = true;
                 transform.position = new Vector3(transform.position.x, endY, transform.position.z);
                 Debug.Log("Door closed");
-                Level.Next();
                 // hook for restart level and stuff here
             }
         }
