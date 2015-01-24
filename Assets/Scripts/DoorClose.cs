@@ -10,7 +10,7 @@ public class DoorClose : MonoBehaviour
 
     private float endY;
     public bool doneMoving = true;
-    private Vector4 color = new Vector4(0.5f, 0.55f, 0.45f, 1f);
+    private Vector4 color = new Vector4(0.9f, 0.9f, 0.9f, 1f);
 
 	void Start()
 	{

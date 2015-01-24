@@ -1,5 +1,4 @@
-﻿using System.Net.Mail;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Level : MonoBehaviour
@@ -10,6 +9,7 @@ public class Level : MonoBehaviour
     public int OffsetX, OffsetY, OffsetZ;
     private bool _found = false;
     private int index;
+
     void Start()
     {
         transform.position = _levelPos;

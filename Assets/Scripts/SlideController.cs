@@ -1,16 +1,10 @@
-﻿using System.Threading;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class SlideController : MonoBehaviour {
     private float _timer = 0;
     private Quaternion _origRot;
     public static bool Sliding = false;
-
-    void Start()
-    {
-        _origRot = transform.rotation;
-    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,6 +13,7 @@ public class SlideController : MonoBehaviour {
             Sliding = true;
 	        _timer = 0;
             transform.GetComponent<CharacterMotor>().movement.maxForwardSpeed += 1;
+            _origRot = transform.rotation;
 	    }
         if (Sliding)
 	    {
