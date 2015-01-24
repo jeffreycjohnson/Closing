@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/pat_test1.unity
   - enabled: 1
     path: Assets/Scenes/pat_test2.unity
+  - enabled: 1
+    path: Assets/Scenes/jalo_test1.unity

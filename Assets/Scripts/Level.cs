@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Level : MonoBehaviour
 {
-    public static int LevelCount = 2;
+    public static int LevelCount = 3;
     private static Vector3 _levelPos = new Vector3(0, 0, 0);
     public static int LevelIndex = 0;
     public int OffsetX, OffsetY, OffsetZ;
@@ -31,6 +31,10 @@ public class Level : MonoBehaviour
                 GameObject.Find("Level " + index).GetComponentInChildren<DoorClose>().doneMoving = true;
             }
             GameObject.Find("Level " + (index + 1)).GetComponentInChildren<DoorClose>().doneMoving = false;
+
+			if (index + 1 < LevelCount) index++;
+
+			Next ();
         }
     }
 
