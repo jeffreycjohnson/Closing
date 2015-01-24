@@ -9,6 +9,7 @@ public class DoorClose : MonoBehaviour
 
     private float endY;
     private bool doneMoving = false;
+    private Vector4 color = new Vector4(0.5f, 0.55f, 0.45f, 1f);
 
 	void Start()
     {
@@ -20,7 +21,9 @@ public class DoorClose : MonoBehaviour
     {
         if (!doneMoving)
         {
+            color *= 0.995f;
             transform.Translate(0, -closeDist * Time.deltaTime / CloseTime, 0);
+            RenderSettings.ambientLight = new Color(color.x, color.y, color.z, color.w);
             if (transform.position.y < endY)
             {
                 doneMoving = true;
