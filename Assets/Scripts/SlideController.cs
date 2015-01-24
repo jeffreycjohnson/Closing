@@ -8,7 +8,7 @@ public class SlideController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Input.GetButtonDown("Submit"))
+	    if (Input.GetButtonDown("Submit") && !Sliding)
 	    {
             Sliding = true;
 	        _timer = 0;
@@ -30,6 +30,7 @@ public class SlideController : MonoBehaviour {
             else
             {
                 Sliding = false;
+                transform.localRotation = _origRot;
                 transform.GetComponent<CharacterMotor>().movement.maxForwardSpeed -= 1;
             }
 	    }
