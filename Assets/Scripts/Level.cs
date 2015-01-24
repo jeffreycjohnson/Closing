@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Level : MonoBehaviour
 {
-    private static int levelIndex = 0;
+    private static int _levelIndex = 0;
+    public static int LevelCount = 1;
     void Start()
     {
         Next();
@@ -11,7 +12,10 @@ public class Level : MonoBehaviour
 
     public static void Next()
     {
-        levelIndex++;
-        Application.LoadLevelAdditive(levelIndex);
+        if (_levelIndex < LevelCount)
+        {
+            _levelIndex++;
+            Application.LoadLevelAdditive(_levelIndex);
+        }
     }
 }
