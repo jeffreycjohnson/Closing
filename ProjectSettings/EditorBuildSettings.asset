@@ -25,3 +25,7 @@ EditorBuildSettings:
     path: Assets/Scenes/intro_fan.unity
   - enabled: 1
     path: Assets/Scenes/box_intro1.unity
+  - enabled: 1
+    path: Assets/Scenes/box_intro2.unity
+  - enabled: 1
+    path: Assets/Scenes/box_pile.unity
