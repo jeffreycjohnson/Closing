@@ -3,20 +3,22 @@ using System.Collections;
 
 public class Level : MonoBehaviour
 {
-    public static int LevelCount = 3;
+    public static int LevelCount = 4;
     private static Vector3 _levelPos = new Vector3(0, 0, 0);
     public static int LevelIndex = 0;
     public int OffsetX, OffsetY, OffsetZ;
     private bool _found = false;
     private int index;
+    private static bool _first = true;
 
     void Start()
     {
         transform.position = _levelPos;
         _levelPos += new Vector3(OffsetX, OffsetY, OffsetZ);
-        index = LevelIndex;
-        if (LevelIndex == 0)
+        index = LevelIndex - 1;
+        if (_first)
         {
+            _first = false;
             Next();
         }
     }
@@ -27,7 +29,7 @@ public class Level : MonoBehaviour
         if (!_found && GameObject.Find("Player").transform.position.x > transform.position.x)
         {
             _found = true;
-            if (index > 0)
+            if (index > GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Skip)
             {
                 GameObject.Find("Level " + index).GetComponentInChildren<DoorClose>().doneMoving = true;
 
