@@ -33,6 +33,8 @@ public class Funnelable : MonoBehaviour
             {
                 rigidbody.useGravity = false;
                 rigidbody.velocity = new Vector3(0, 0, 0);
+                rigidbody.angularVelocity = new Vector3(0, 0, 0);
+                rigidbody.rotation = Quaternion.identity;
             }
         }
     }

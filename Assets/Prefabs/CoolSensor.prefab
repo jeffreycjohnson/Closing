@@ -81,7 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab96b76218bea408c2a2dd084c1f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  Targets: []
+  OffMaterial: {fileID: 2100000, guid: 783496e6244db684797ee6fe1afdff73, type: 2}
+  OnMaterial: {fileID: 2100000, guid: 4793ce529d5350e4fa18e64dfe71a2ed, type: 2}
   ActivatorType: 2
 --- !u!1001 &100100000
 Prefab:

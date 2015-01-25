@@ -4,7 +4,7 @@ using System.Collections;
 public class Placeable : MonoBehaviour
 {
     private static bool coroutinestarted = false;
-    private static bool placing = false;
+    public static bool placing = false;
     private static bool shouldchangeplacing = false;
     public GameObject GhostPrefab;
     private GameObject Ghost;
@@ -41,17 +41,22 @@ public class Placeable : MonoBehaviour
         if (cam == null) return;
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        bool raycastpickup = Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 8);
+        bool raycastpickup = Physics.Raycast(ray, out hit, Mathf.Infinity, (1 << 8) | (1 << 9));
 
         if (raycastpickup && !Ghost.activeSelf && (hit.transform.gameObject == gameObject || hit.transform == transform.parent)
             && Input.GetButtonDown("Place") && !placing && !Door.GetComponent<DoorClose>().doneMoving)
         {
             Ghost.SetActive(true);
             placing = true;
+            if (gameObject.layer == 8) gameObject.layer = 2;
         }
         else if (Ghost.activeSelf)
         {
-            bool raycastdrop = Physics.Raycast(ray, out hit, Mathf.Infinity, ~((1 << 8) | (1 << 2)));
+            // 9 means both doesn't place on others and others can't be placed on it.
+            int mask;
+            if (gameObject.layer == 9) mask = ~((1 << 2) | (1 << 8) | (1 << 9));
+            else mask = ~((1 << 9) | (1 << 2));
+            bool raycastdrop = Physics.Raycast(ray, out hit, Mathf.Infinity, mask);
             Vector3 pushout = hit.normal;
             pushout.Normalize();
             pushout.Scale(new Vector3(PushDistance, PushDistance, PushDistance));
@@ -85,6 +90,9 @@ public class Placeable : MonoBehaviour
                 transform.position = Ghost.transform.position;
                 transform.rotation = Ghost.transform.rotation;
                 shouldchangeplacing = true;
+                rigidbody.angularVelocity = Vector3.zero;
+                rigidbody.velocity = Vector3.zero;
+                if (gameObject.layer == 2) gameObject.layer = 8;
                 if (hit.transform.name == "Platform")
                 {
                     transform.parent = hit.transform;

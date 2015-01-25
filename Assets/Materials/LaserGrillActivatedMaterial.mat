@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: LaserGrillMaterial
+  m_Name: LaserGrillActivatedMaterial
   m_Shader: {fileID: 4800000, guid: 6408ab651cbfb26408f5053bfe80a79a, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -25,4 +25,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .0642301142, g: .552499592, b: .79411763, a: .486274511}
+        second: {r: .25546065, g: .931638479, b: .992647052, a: .509803951}

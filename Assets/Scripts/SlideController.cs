@@ -17,7 +17,7 @@ public class SlideController : MonoBehaviour {
         {
             Placeable placeable = hit.transform.GetComponent<Placeable>();
             if (hit.transform.GetComponent<Activator>() != null ||
-                (placeable != null && !placeable.Door.GetComponent<DoorClose>().doneMoving && placeable.enabled))
+                (placeable != null && !placeable.Door.GetComponent<DoorClose>().doneMoving && placeable.enabled && !Placeable.placing))
             {
                 selected.GetComponent<MeshRenderer>().enabled = true;
                 selected.position = hit.transform.position;

@@ -6,6 +6,8 @@ public class Activator : MonoBehaviour
     public Target[] Targets;
 
     public bool ButtonDown { get; private set; }
+    public Material OffMaterial;
+    public Material OnMaterial;
     private int BoxCount = 0;
 
     public enum Type
@@ -53,6 +55,7 @@ public class Activator : MonoBehaviour
                 foreach (Target t in Targets)
                 {
                     t.Running = !t.Running;
+                    GetComponent<MeshRenderer>().material = OnMaterial;
                 }
             }
             //Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
@@ -69,6 +72,7 @@ public class Activator : MonoBehaviour
                 foreach (Target t in Targets)
                 {
                     t.Running = !t.Running;
+                    GetComponent<MeshRenderer>().material = OffMaterial;
                 }
             }
         }
