@@ -34,6 +34,9 @@ public class PlatformController : MonoBehaviour
 
 	void OnCollisionEnter(Collision col)
 	{
-		_movingPositively = !_movingPositively;
+	    if (col.gameObject.tag != "CarryCube")
+	    {
+	        _movingPositively = !_movingPositively;
+	    }
 	}
 }
