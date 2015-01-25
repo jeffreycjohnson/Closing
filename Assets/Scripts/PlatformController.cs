@@ -7,6 +7,7 @@ public class PlatformController : MonoBehaviour
 	public bool MovePositiveInitially = true;
 	public float Speed = 100;
 	public bool ShouldMove = true;
+    public bool LevelReached = false;
 
 	private bool _movingPositively;
 
@@ -19,6 +20,7 @@ public class PlatformController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
+        if (LevelReached) ShouldMove = GetComponent<Target>().Running;
 		float moveAmount = (ShouldMove ? 1 : 0) * (_movingPositively ? 1 : -1) * Speed * Time.deltaTime;
 
 		if (MoveInXAxis)

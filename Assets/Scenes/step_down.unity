@@ -590,7 +590,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de7584c0a91b1f34d8fee25a7658f3ff, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de7584c0a91b1f34d8fee25a7658f3ff, type: 2}
       propertyPath: m_LocalScale.y
@@ -834,7 +834,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de7584c0a91b1f34d8fee25a7658f3ff, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de7584c0a91b1f34d8fee25a7658f3ff, type: 2}
       propertyPath: m_LocalScale.y
@@ -2313,6 +2313,7 @@ GameObject:
   - 23: {fileID: 1631070272}
   - 54: {fileID: 1631070271}
   - 114: {fileID: 1631070270}
+  - 114: {fileID: 1631070276}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -2333,9 +2334,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveInXAxis: 1
-  MovePositiveInitially: 0
+  MovePositiveInitially: 1
   Speed: 100
   ShouldMove: 0
+  LevelReached: 0
 --- !u!54 &1631070271
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2406,6 +2408,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 724492065}
   m_RootOrder: 18
+--- !u!114 &1631070276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 2d5217153afbf49d6860e7dc08cf7edb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1908997056}
+  m_GameObject: {fileID: 1631070269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4270c547c28c24993b0c09fea2e632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Running: 1
 --- !u!1 &1694164010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,21 +2765,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 6572926, guid: 2d5217153afbf49d6860e7dc08cf7edb, type: 2}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572926, guid: 2d5217153afbf49d6860e7dc08cf7edb, type: 2}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572926, guid: 2d5217153afbf49d6860e7dc08cf7edb, type: 2}
-      propertyPath: m_Size.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 11472926, guid: 2d5217153afbf49d6860e7dc08cf7edb, type: 2}
       propertyPath: MovePositiveInitially
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2d5217153afbf49d6860e7dc08cf7edb, type: 2}
+      propertyPath: Running
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d5217153afbf49d6860e7dc08cf7edb, type: 2}
@@ -3080,7 +3087,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de7584c0a91b1f34d8fee25a7658f3ff, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de7584c0a91b1f34d8fee25a7658f3ff, type: 2}
       propertyPath: m_LocalScale.y
