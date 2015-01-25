@@ -9,6 +9,7 @@ public class Placeable : MonoBehaviour
     public GameObject GhostPrefab;
     private GameObject Ghost;
     public float PushDistance = 0.2f;
+    public GameObject Door;
 
 	void Start()
     {
@@ -79,6 +80,12 @@ public class Placeable : MonoBehaviour
                 Ghost.SetActive(false);
                 transform.position = Ghost.transform.position;
                 transform.rotation = Ghost.transform.rotation;
+                shouldchangeplacing = true;
+            }
+
+            if (Door.GetComponent<DoorClose>().doneMoving)
+            {
+                Ghost.SetActive(false);
                 shouldchangeplacing = true;
             }
         }

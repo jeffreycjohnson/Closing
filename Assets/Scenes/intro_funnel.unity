@@ -766,6 +766,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0e93aa9b057cadd48bd72c4cbf7693be, type: 2}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 1275230477}
+    - target: {fileID: 11400000, guid: 0e93aa9b057cadd48bd72c4cbf7693be, type: 2}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 1156649097}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e93aa9b057cadd48bd72c4cbf7693be, type: 2}
   m_RootGameObject: {fileID: 1693987535}
@@ -1490,6 +1498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GhostPrefab: {fileID: 100000, guid: 5598c6ba97c9c5440aef8da585e40ee6, type: 2}
   PushDistance: .0500000007
+  Door: {fileID: 1156649097}
 --- !u!23 &1693987538
 Renderer:
   m_ObjectHideFlags: 0

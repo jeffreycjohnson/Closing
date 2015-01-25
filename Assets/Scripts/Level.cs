@@ -40,7 +40,7 @@ public class Level : MonoBehaviour
         if (!_found && GameObject.Find("Player").transform.position.x > transform.position.x)
         {
             _found = true;
-            if (index > loader.Skip)
+            if (index >= loader.Skip)
             {
                 GameObject level = GameObject.Find(SceneNames[index]);
                 level.GetComponentInChildren<DoorClose>().doneMoving = true;
@@ -49,7 +49,7 @@ public class Level : MonoBehaviour
 					pc.ShouldMove = false;
 				}
             }
-
+            Debug.Log(SceneNames[index + 1]);
             GameObject level2 = GameObject.Find(SceneNames[index + 1]);
             level2.GetComponentInChildren<DoorClose>().doneMoving = false;
             foreach (PlatformController pc in level2.GetComponentsInChildren<PlatformController>())
