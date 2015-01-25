@@ -5,7 +5,7 @@ public class Funnelable : MonoBehaviour
 {
 
     GameObject funnel;
-    static float FunnelSpeed = 0.02f;
+    static float FunnelSpeed = 0.04f;
     CharacterMotor charmotor;
 
     void Awake()

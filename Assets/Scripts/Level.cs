@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Level : MonoBehaviour
 {
-    public static int LevelCount = 8;
+    public static int LevelCount = 9;
     private static Vector3 _levelPos = new Vector3(0, 0, 0);
     public static int LevelIndex = 0;
     public int OffsetX, OffsetY, OffsetZ;
@@ -32,14 +32,6 @@ public class Level : MonoBehaviour
             if (index > GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Skip)
             {
                 GameObject.Find("Level " + index).GetComponentInChildren<DoorClose>().doneMoving = true;
-
-				PlatformController[] pcs = 
-					GameObject.Find("Level " + index).GetComponentsInChildren<PlatformController>();
-
-				foreach (PlatformController pc in pcs)
-				{
-					pc.ShouldMove = false;
-				}
             }
             GameObject.Find("Level " + (index + 1)).GetComponentInChildren<DoorClose>().doneMoving = false;
 
@@ -49,6 +41,14 @@ public class Level : MonoBehaviour
 			foreach (PlatformController pc in pcsn)
 			{
 				pc.ShouldMove = true;
+			}
+
+			FallController[] fcn =
+				GameObject.Find("Level " + (index + 1)).GetComponentsInChildren<FallController>();
+
+			foreach (FallController fc in fcn)
+			{
+				fc.Falling = true;
 			}
 
 			if (index + 1 < LevelCount) index++;

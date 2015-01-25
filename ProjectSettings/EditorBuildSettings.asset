@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/Scenes/intro_funnel.unity
   - enabled: 1
     path: Assets/Scenes/air_sensor.unity
+  - enabled: 1
+    path: Assets/Scenes/step_down.unity
