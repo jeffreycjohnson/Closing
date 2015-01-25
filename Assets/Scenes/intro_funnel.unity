@@ -870,7 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caddbfabd55f5d24ba94d49baab8f30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloseTime: 10
+  CloseTime: 20
   closeDist: 1
   doneMoving: 1
 --- !u!23 &1156649100
@@ -925,7 +925,7 @@ GameObject:
   - 4: {fileID: 1275230478}
   - 114: {fileID: 1275230479}
   m_Layer: 0
-  m_Name: Level 6
+  m_Name: intro_funnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
