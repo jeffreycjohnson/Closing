@@ -30,6 +30,7 @@ public class Activator : MonoBehaviour
                     foreach (Target ta in Targets)
                     {
                         ta.Running = !ta.Running;
+                        Debug.Log("Change active state");
                     }
                 }
 	        }

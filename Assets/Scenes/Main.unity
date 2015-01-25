@@ -756,8 +756,8 @@ MonoBehaviour:
   sensitivityY: 4
   minimumX: 0
   maximumX: 360
-  minimumY: -60
-  maximumY: 60
+  minimumY: -85
+  maximumY: 85
 --- !u!124 &1847004906
 Behaviour:
   m_ObjectHideFlags: 0
@@ -857,6 +857,14 @@ Prefab:
     - target: {fileID: 400000, guid: 30c8cf515b743ca428d08d53c707d341, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 30c8cf515b743ca428d08d53c707d341, type: 2}
+      propertyPath: minimumY
+      value: -85
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 30c8cf515b743ca428d08d53c707d341, type: 2}
+      propertyPath: maximumY
+      value: 85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c8cf515b743ca428d08d53c707d341, type: 2}
