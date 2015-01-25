@@ -6,6 +6,7 @@ public class Activator : MonoBehaviour
     public Target[] Targets;
 
     public bool ButtonDown { get; private set; }
+    private int BoxCount = 0;
 
     public enum Type
     {
@@ -30,6 +31,7 @@ public class Activator : MonoBehaviour
                     foreach (Target ta in Targets)
                     {
                         ta.Running = !ta.Running;
+                        Debug.Log("Change active state");
                     }
                 }
 	        }
@@ -44,9 +46,14 @@ public class Activator : MonoBehaviour
     {
         if (ColliderIsOurType(col))
         {
-            foreach (Target t in Targets)
+            int lastboxcount = BoxCount;
+            BoxCount += 1;
+            if (lastboxcount == 0)
             {
-                t.Running = !t.Running;
+                foreach (Target t in Targets)
+                {
+                    t.Running = !t.Running;
+                }
             }
             //Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
         }
@@ -56,9 +63,13 @@ public class Activator : MonoBehaviour
     {
         if (ColliderIsOurType(col))
         {
-            foreach (Target t in Targets)
+            BoxCount -= 1;
+            if (BoxCount == 0)
             {
-                t.Running = !t.Running;
+                foreach (Target t in Targets)
+                {
+                    t.Running = !t.Running;
+                }
             }
         }
     }
