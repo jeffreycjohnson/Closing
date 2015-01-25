@@ -29,8 +29,24 @@ public class Level : MonoBehaviour
             if (index > 0)
             {
                 GameObject.Find("Level " + index).GetComponentInChildren<DoorClose>().doneMoving = true;
+
+				PlatformController[] pcs = 
+					GameObject.Find("Level " + index).GetComponentsInChildren<PlatformController>();
+
+				foreach (PlatformController pc in pcs)
+				{
+					pc.ShouldMove = false;
+				}
             }
             GameObject.Find("Level " + (index + 1)).GetComponentInChildren<DoorClose>().doneMoving = false;
+
+			PlatformController[] pcsn = 
+				GameObject.Find("Level " + (index + 1)).GetComponentsInChildren<PlatformController>();
+			
+			foreach (PlatformController pc in pcsn)
+			{
+				pc.ShouldMove = true;
+			}
 
 			if (index + 1 < LevelCount) index++;
 
