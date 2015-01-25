@@ -34,13 +34,13 @@ public class Level : MonoBehaviour
 
     void Update()
     {
-        LevelLoader loader = FindObjectOfType<LevelLoader>();
-
         Screen.lockCursor = true;
-        if (!_found && GameObject.Find("Player").transform.position.x > transform.position.x)
+        GameObject player = GameObject.Find("Player");
+        if (!player) return;
+        if (!_found && player.transform.position.x > transform.position.x)
         {
             _found = true;
-            if (index >= loader.Skip)
+            if (index >= FindObjectOfType<LevelLoader>().Skip)
             {
                 GameObject level = GameObject.Find(SceneNames[index]);
                 level.GetComponentInChildren<DoorClose>().doneMoving = true;

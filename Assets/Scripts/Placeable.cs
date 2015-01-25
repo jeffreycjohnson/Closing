@@ -37,7 +37,9 @@ public class Placeable : MonoBehaviour
 	
 	void Update()
     {
-        Ray ray = FindObjectOfType<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Camera cam = FindObjectOfType<Camera>();
+        if (cam == null) return;
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         bool raycastpickup = Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 8);
 
