@@ -15,12 +15,13 @@ public class Funnelable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Funnel")
+        if (other.gameObject.tag == "Funnel" || other.gameObject.tag == "Fan")
         {
             funnel = other.gameObject;
-            
-            if (charmotor)
+
+            if (charmotor && other.gameObject.tag == "Funnel")
             {
+                GetComponent<CharacterController>().stepOffset = 0;
                 charmotor.movement.gravity = 0;
             }
             else if (rigidbody)
@@ -38,7 +39,6 @@ public class Funnelable : MonoBehaviour
             dir.Scale(new Vector3(FunnelSpeed, FunnelSpeed, FunnelSpeed));
             if (charmotor)
             {
-                GetComponent<CharacterController>().stepOffset = 0;
                 GetComponent<CharacterController>().Move(dir);
             }
             else
@@ -49,7 +49,7 @@ public class Funnelable : MonoBehaviour
 	}
     void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.tag == "Funnel")
+        if (collider.gameObject.tag == "Funnel" || collider.gameObject.tag == "Fan")
         {
             funnel = null;
             if (charmotor)
