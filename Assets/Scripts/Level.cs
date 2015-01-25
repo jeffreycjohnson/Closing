@@ -36,20 +36,14 @@ public class Level : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Restart") && _found)
+        if (Input.GetButtonDown("Restart") && index == LevelIndex-2)
         {
-            Debug.Log(index);
-            Debug.Log(SceneNames[index]);
-            GameObject.Find(SceneNames[index]).GetComponentInChildren<DoorClose>().Restart();
-            foreach (Placeable p in GameObject.Find(SceneNames[index]).GetComponentsInChildren<Placeable>())
-            {
-                p.Restart();
-            }
-            foreach (Activator a in GameObject.Find(SceneNames[index]).GetComponentsInChildren<Activator>())
-            {
-                a.Restart();
-            }
-            GameObject.Find("Player").transform.position = transform.position;
+            LevelIndex = 0;
+            _first = true;
+            _levelPos = new Vector3(0, 0, 0);
+            LevelLoader.NewSkip = index;
+            Application.LoadLevel(0);
+            Placeable.Restart();
         }
         Screen.lockCursor = true;
         GameObject player = GameObject.Find("Player");

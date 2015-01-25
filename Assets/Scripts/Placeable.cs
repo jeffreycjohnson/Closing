@@ -26,11 +26,11 @@ public class Placeable : MonoBehaviour
         }
 	}
 
-    public void Restart()
+    public static void Restart()
     {
-        transform.position = _startPos;
-        transform.rotation = _startRot;
-        transform.parent = null;
+        placing = false;
+        shouldchangeplacing = false;
+        coroutinestarted = false;
     }
 
     IEnumerator SetPlacing()
