@@ -22,18 +22,11 @@ public class Funnelable : MonoBehaviour
             if (charmotor)
             {
                 charmotor.movement.gravity = 0;
-                transform.Translate(new Vector3(0, 0.5f, 0));
-                //GetComponent<CharacterController>().SimpleMove(new Vector3(0, 1f, 0));
-                //GetComponent<CharacterController>().Move(new Vector3(0, 1f, 0));
-                //transform.Translate(new Vector3(0, -0.1f, 0));
-                //GetComponent<CharacterController>().velocity = new Vector3(0, 1f, 0);
-                //charmotor.constantForce.rigidbody.AddForce(new Vector3(0, 50f, 0));
             }
             else if (rigidbody)
             {
                 rigidbody.useGravity = false;
                 rigidbody.velocity = new Vector3(0, 0, 0);
-                //rigidbody.AddForce(new Vector3(0.2f, 0, 0));
             }
         }
     }
@@ -45,14 +38,12 @@ public class Funnelable : MonoBehaviour
             dir.Scale(new Vector3(FunnelSpeed, FunnelSpeed, FunnelSpeed));
             if (charmotor)
             {
-                //GetComponent<CharacterController>().Move(new Vector3(0, 0.03f, 0));
-                
-                transform.transform.Translate(dir, Space.World);
+                GetComponent<CharacterController>().stepOffset = 0;
+                GetComponent<CharacterController>().Move(dir);
             }
             else
             {
                 transform.transform.Translate(dir, Space.World);
-                //rigidbody.velocity = new Vector3(0, 0.2f, 0);
             }
         }
 	}
@@ -61,17 +52,15 @@ public class Funnelable : MonoBehaviour
         if (collider.gameObject.tag == "Funnel")
         {
             funnel = null;
-            //transform.Translate(new Vector3(0, 0.1f, 0));
             if (charmotor)
             {
                 charmotor.movement.gravity = 10;
+                GetComponent<CharacterController>().stepOffset = 0.4f;
             }
             else if (rigidbody)
             {
                 rigidbody.useGravity = true;
             }
-            //GetComponent<CharacterMotor>().enabled = true;
-            //GetComponent<CharacterController>().SimpleMove(new Vector3(0, -2f * Time.deltaTime, 0));
         }
     }
 }
