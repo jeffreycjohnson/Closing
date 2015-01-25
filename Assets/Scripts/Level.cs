@@ -49,7 +49,7 @@ public class Level : MonoBehaviour
 					pc.ShouldMove = false;
 				}
             }
-            Debug.Log(SceneNames[index + 1]);
+
             GameObject level2 = GameObject.Find(SceneNames[index + 1]);
             level2.GetComponentInChildren<DoorClose>().doneMoving = false;
             foreach (PlatformController pc in level2.GetComponentsInChildren<PlatformController>())
