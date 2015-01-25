@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Placeable : MonoBehaviour
 {
-    private bool beingplaced;
+    private static bool coroutinestarted = false;
+    private static bool placing = false;
+    private static bool shouldchangeplacing = false;
     public GameObject GhostPrefab;
     private GameObject Ghost;
     public float PushDistance = 0.2f;
@@ -12,7 +14,25 @@ public class Placeable : MonoBehaviour
     {
         Ghost = (GameObject)GameObject.Instantiate(GhostPrefab, transform.position, Quaternion.identity);
         Ghost.SetActive(false);
+        if (!coroutinestarted)
+        {
+            StartCoroutine("SetPlacing");
+            coroutinestarted = true;
+        }
 	}
+
+    IEnumerator SetPlacing()
+    {
+        while (true)
+        {
+            if (shouldchangeplacing)
+            {
+                placing = false;
+                shouldchangeplacing = false;
+            }
+            yield return null;
+        }
+    }
 	
 	void Update()
     {
@@ -21,10 +41,10 @@ public class Placeable : MonoBehaviour
         bool raycastpickup = Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 8);
         
         
-        if (raycastpickup && !Ghost.activeSelf && hit.transform.gameObject == gameObject && Input.GetMouseButtonDown(0))
+        if (raycastpickup && !Ghost.activeSelf && hit.transform.gameObject == gameObject && Input.GetMouseButtonDown(0) && !placing)
         {
-            Debug.Log("Picked up");
             Ghost.SetActive(true);
+            placing = true;
         }
         else if (Ghost.activeSelf)
         {
@@ -57,9 +77,9 @@ public class Placeable : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && raycastdrop)
             {
                 Ghost.SetActive(false);
-                Debug.Log("Place");
                 transform.position = Ghost.transform.position;
                 transform.rotation = Ghost.transform.rotation;
+                shouldchangeplacing = true;
             }
         }
         

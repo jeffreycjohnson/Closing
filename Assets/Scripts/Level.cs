@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Level : MonoBehaviour
 {
-    public static int LevelCount = 4;
+    public static int LevelCount = 6;
     private static Vector3 _levelPos = new Vector3(0, 0, 0);
     public static int LevelIndex = 0;
     public int OffsetX, OffsetY, OffsetZ;
