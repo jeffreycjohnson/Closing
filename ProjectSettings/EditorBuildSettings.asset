@@ -45,3 +45,5 @@ EditorBuildSettings:
     path: Assets/Scenes/intro2.unity
   - enabled: 1
     path: Assets/Scenes/box_platform_simple.unity
+  - enabled: 1
+    path: Assets/Scenes/stepping_stone.unity

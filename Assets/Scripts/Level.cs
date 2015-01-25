@@ -11,10 +11,11 @@ public class Level : MonoBehaviour
     private bool _found = false;
     private int index;
     private static bool _first = true;
+    public static bool ShouldRestart = false;
 
     public static string[] SceneNames = { "intro1", "intro2", "box_intro1", "box_intro2", "box_stack", "air_sensor",
                                           "intro_funnel", "funnel_pit", "heavy_search", "heavy_intro", "voyage",
-                                          "box_platform_simple", "step_down" };
+                                          "box_platform_simple", "step_down", "stepping_stone" };
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class Level : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Restart") && index == LevelIndex-2)
+        if (Input.GetButtonDown("Restart") && index == LevelIndex-2 || ShouldRestart)
         {
             LevelIndex = 0;
             _first = true;
@@ -44,6 +45,7 @@ public class Level : MonoBehaviour
             LevelLoader.NewSkip = index;
             Application.LoadLevel(0);
             Placeable.Restart();
+            ShouldRestart = false;
         }
         Screen.lockCursor = true;
         GameObject player = GameObject.Find("Player");
