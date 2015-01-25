@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Level : MonoBehaviour
 {
-    public static int LevelCount = 8;
     private static Vector3 _levelPos = new Vector3(0, 0, 0);
     public static int LevelIndex = 0;
     public int OffsetX, OffsetY, OffsetZ;
@@ -13,6 +12,12 @@ public class Level : MonoBehaviour
 
     void Start()
     {
+        if (GameObject.Find("Player") == null)
+        {
+            LevelIndex = Application.loadedLevel;
+            Application.LoadLevelAdditive(0);
+            LevelLoader.NewSkip = LevelIndex;
+        }
         transform.position = _levelPos;
         _levelPos += new Vector3(OffsetX, OffsetY, OffsetZ);
         index = LevelIndex - 1;
@@ -51,7 +56,7 @@ public class Level : MonoBehaviour
 				pc.ShouldMove = true;
 			}
 
-			if (index + 1 < LevelCount) index++;
+			if (index + 1 < Application.levelCount) index++;
 
 			Next ();
         }
@@ -59,7 +64,7 @@ public class Level : MonoBehaviour
 
     public static void Next()
     {
-        if (LevelIndex + 1 < LevelCount)
+        if (LevelIndex + 1 < Application.levelCount)
         {
             LevelIndex++;
             Application.LoadLevelAdditive(LevelIndex);
