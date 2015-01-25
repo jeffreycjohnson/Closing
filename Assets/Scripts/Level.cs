@@ -12,7 +12,7 @@ public class Level : MonoBehaviour
     private int index;
     private static bool _first = true;
 
-    public static string[] SceneNames = { "pat_test2", "laser_hall", "intro_funnel", "voyage", "air_sensor" };
+    public static string[] SceneNames = { "pat_test2", "laser_hall", "intro_funnel", "voyage", "air_sensor", "step_down" };
 
     void Start()
     {
@@ -59,7 +59,7 @@ public class Level : MonoBehaviour
             }
 
             FallController[] fcn =
-                GameObject.Find("Level " + (index + 1)).GetComponentsInChildren<FallController>();
+				level2.GetComponentsInChildren<FallController>();
 
             foreach (FallController fc in fcn)
             {
