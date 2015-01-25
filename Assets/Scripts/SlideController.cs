@@ -7,7 +7,21 @@ public class SlideController : MonoBehaviour {
     public static bool Sliding = false;
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
+        Transform t = GameObject.Find("Main Camera").transform;
+        RaycastHit hit;
+        Transform selected = GameObject.Find("Selected Effect").transform;
+        selected.GetComponent<MeshRenderer>().enabled = false;
+        if (Physics.Raycast(t.position, t.TransformDirection(Vector3.forward), out hit, 1))
+        {
+            if (hit.transform.GetComponent<Target>() != null || hit.transform.GetComponent<Placeable>() != null)
+            {
+                selected.GetComponent<MeshRenderer>().enabled = true;
+                selected.position = hit.transform.position;
+                selected.localScale = hit.transform.localScale * 1.1f;
+            }
+        }
 	    if (Input.GetButtonDown("Submit") && !Sliding)
 	    {
             Sliding = true;
