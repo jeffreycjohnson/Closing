@@ -13,9 +13,9 @@ public class SlideController : MonoBehaviour {
         RaycastHit hit;
         Transform selected = GameObject.Find("Selected Effect").transform;
         selected.GetComponent<MeshRenderer>().enabled = false;
-        if (Physics.Raycast(t.position, t.TransformDirection(Vector3.forward), out hit, 1))
+        if (Physics.Raycast(t.position, t.TransformDirection(Vector3.forward), out hit))
         {
-            if (hit.transform.GetComponent<Target>() != null || hit.transform.GetComponent<Placeable>() != null)
+            if (hit.transform.GetComponent<Activator>() != null || hit.transform.GetComponent<Placeable>() != null)
             {
                 selected.GetComponent<MeshRenderer>().enabled = true;
                 selected.position = hit.transform.position;
