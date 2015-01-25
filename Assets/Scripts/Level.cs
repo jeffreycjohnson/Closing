@@ -12,7 +12,9 @@ public class Level : MonoBehaviour
     private int index;
     private static bool _first = true;
 
-    public static string[] SceneNames = { "intro1", "box_intro1", "box_intro2", "box_stack", "funnel_pit", "air_sensor", "intro_funnel", "voyage", "step_down" };
+    public static string[] SceneNames = { "intro1", "box_intro1", "box_intro2", "box_stack", "air_sensor",
+                                          "intro_funnel", "funnel_pit", "heavy_search", "heavy_intro", "voyage",
+                                          "step_down" };
 
     void Start()
     {
