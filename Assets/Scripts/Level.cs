@@ -15,7 +15,7 @@ public class Level : MonoBehaviour
 
     public static string[] SceneNames = { "intro1", "intro2", "box_intro1", "box_intro2", "box_stack", "air_sensor",
                                           "intro_funnel", "funnel_pit", "heavy_search", "heavy_intro", "voyage",
-                                          "box_platform_simple", "step_down", "stepping_stone" };
+                                          "box_platform_simple", "step_down", "stepping_stone", "laser_hall", "box_pile" };
 
     void Start()
     {
