@@ -919,6 +919,10 @@ Prefab:
       propertyPath: Door
       value: 
       objectReference: {fileID: 93014733}
+    - target: {fileID: 2300000, guid: 0e93aa9b057cadd48bd72c4cbf7693be, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 825d9f0f46e16ba4e91460cca21054d7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e93aa9b057cadd48bd72c4cbf7693be, type: 2}
   m_RootGameObject: {fileID: 1693987535}
@@ -1736,7 +1740,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 06b6bfcd9b38b0d479c1b25a62be01c0, type: 2}
+  - {fileID: 2100000, guid: 825d9f0f46e16ba4e91460cca21054d7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
