@@ -17,6 +17,12 @@ public class DoorClose : MonoBehaviour
         endY = transform.position.y;
         transform.transform.transform.Translate(0, closeDist, 0);
 	}
+
+    public void Restart()
+    {
+        doneMoving = false;
+        elapsed = 0;
+    }
 	
 	void Update()
     {

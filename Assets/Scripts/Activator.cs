@@ -44,6 +44,14 @@ public class Activator : MonoBehaviour
 	    }
 	}
 
+    public void Restart()
+    {
+        foreach (Target t in Targets)
+        {
+            t.Running = false;
+        }
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if (ColliderIsOurType(col))

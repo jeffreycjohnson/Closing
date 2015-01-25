@@ -10,9 +10,13 @@ public class Placeable : MonoBehaviour
     private GameObject Ghost;
     public float PushDistance = 0.2f;
     public GameObject Door;
+    private Vector3 _startPos;
+    private Quaternion _startRot;
 
 	void Start()
-    {
+	{
+	    _startPos = transform.position;
+	    _startRot = transform.rotation;
         Ghost = (GameObject)GameObject.Instantiate(GhostPrefab, transform.position, Quaternion.identity);
         Ghost.SetActive(false);
         if (!coroutinestarted)
@@ -21,6 +25,13 @@ public class Placeable : MonoBehaviour
             coroutinestarted = true;
         }
 	}
+
+    public void Restart()
+    {
+        transform.position = _startPos;
+        transform.rotation = _startRot;
+        transform.parent = null;
+    }
 
     IEnumerator SetPlacing()
     {
