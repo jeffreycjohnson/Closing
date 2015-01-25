@@ -15,7 +15,8 @@ public class SlideController : MonoBehaviour {
         selected.GetComponent<MeshRenderer>().enabled = false;
         if (Physics.Raycast(t.position, t.TransformDirection(Vector3.forward), out hit))
         {
-            if (hit.transform.GetComponent<Activator>() != null || hit.transform.GetComponent<Placeable>() != null)
+            if (hit.transform.GetComponent<Activator>() != null ||
+                (hit.transform.GetComponent<Placeable>() != null && !hit.transform.GetComponent<Placeable>().Door.GetComponent<DoorClose>().doneMoving))
             {
                 selected.GetComponent<MeshRenderer>().enabled = true;
                 selected.position = hit.transform.position;

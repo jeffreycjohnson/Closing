@@ -74,7 +74,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GhostPrefab: {fileID: 100000, guid: 35bbfc58dcb48db4c98f70fd92633a03, type: 2}
   PushDistance: .25
+  Door: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
