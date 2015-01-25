@@ -2971,6 +2971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GhostPrefab: {fileID: 100000, guid: 35bbfc58dcb48db4c98f70fd92633a03, type: 2}
   PushDistance: .25
+  Door: {fileID: 1157367383}
 --- !u!23 &1474726076
 Renderer:
   m_ObjectHideFlags: 0
@@ -3132,7 +3133,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1521209988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.52625179, y: 4.17703485, z: -7.27328253}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1806814904}
@@ -3611,6 +3612,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 1521209988}
+    - target: {fileID: 11400000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 1157367383}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
   m_RootGameObject: {fileID: 1474726073}

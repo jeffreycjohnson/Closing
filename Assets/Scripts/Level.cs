@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -15,6 +16,12 @@ public class Level : MonoBehaviour
 
     void Start()
     {
+        if (GameObject.Find("Player") == null)
+        {
+            LevelIndex = Array.FindIndex(SceneNames, 0, x => x.Contains(Application.loadedLevelName));
+            Application.LoadLevelAdditive(0);
+            LevelLoader.NewSkip = LevelIndex;
+        }
         transform.position = _levelPos;
         _levelPos += new Vector3(OffsetX, OffsetY, OffsetZ);
         index = LevelIndex - 1;
@@ -33,7 +40,7 @@ public class Level : MonoBehaviour
         if (!_found && GameObject.Find("Player").transform.position.x > transform.position.x)
         {
             _found = true;
-            if (index > loader.Skip)
+            if (index >= loader.Skip)
             {
                 GameObject level = GameObject.Find(SceneNames[index]);
                 level.GetComponentInChildren<DoorClose>().doneMoving = true;
