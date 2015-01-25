@@ -343,7 +343,7 @@ CharacterController:
   m_Height: 2
   m_Radius: .400000006
   m_SlopeLimit: 45
-  m_StepOffset: .400000006
+  m_StepOffset: .200000003
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
