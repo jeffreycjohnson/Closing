@@ -24,6 +24,11 @@ public class Funnelable : MonoBehaviour
                 charmotor.movement.gravity = 0;
                 charmotor.movement.velocity = new Vector3(0, 0, 0);
             }
+            else if (rigidbody)
+            {
+                rigidbody.useGravity = false;
+                rigidbody.velocity = new Vector3(0, 0, 0);
+            }
             //GetComponent<CharacterMotor>().ju
             //transform.transform.transform.transform.Translate(0, 0.2f, 0);
             //GetComponent<CharacterMotor>().enabled = false;
@@ -52,6 +57,10 @@ public class Funnelable : MonoBehaviour
             if (charmotor)
             {
                 charmotor.movement.gravity = 10;
+            }
+            else if (rigidbody)
+            {
+                rigidbody.useGravity = true;
             }
             //GetComponent<CharacterMotor>().enabled = true;
             //GetComponent<CharacterController>().SimpleMove(new Vector3(0, -2f * Time.deltaTime, 0));

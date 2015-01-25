@@ -9,8 +9,9 @@ public class Activator : MonoBehaviour
 
     public enum Type
     {
-        Plate,
-        Button
+        Button,
+        PlayerSensor,
+        CubeSensor,
     };
 
     public Type ActivatorType;
@@ -39,13 +40,23 @@ public class Activator : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
-        ButtonDown = true;
+        if (ColliderIsOurType(col))
+        {
+            Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
+        }
     }
 
     void OnTriggerExit(Collider col)
     {
-        Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
-        ButtonDown = false;
+        if (ColliderIsOurType(col))
+        {
+            Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
+        }
+    }
+
+    bool ColliderIsOurType(Collider col)
+    {
+        return (ActivatorType == Type.PlayerSensor && col.tag == "Player")
+            || (ActivatorType == Type.CubeSensor && col.tag == "CarryCube");
     }
 }
