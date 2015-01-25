@@ -90,8 +90,11 @@ public class Placeable : MonoBehaviour
                 transform.position = Ghost.transform.position;
                 transform.rotation = Ghost.transform.rotation;
                 shouldchangeplacing = true;
-                rigidbody.angularVelocity = Vector3.zero;
-                rigidbody.velocity = Vector3.zero;
+                if (rigidbody)
+                {
+                    rigidbody.angularVelocity = Vector3.zero;
+                    rigidbody.velocity = Vector3.zero;
+                }
                 if (gameObject.layer == 2) gameObject.layer = 8;
                 if (hit.transform.name == "Platform")
                 {

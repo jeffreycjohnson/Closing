@@ -28,6 +28,7 @@ public class Funnelable : MonoBehaviour
             {
                 GetComponent<CharacterController>().stepOffset = 0;
                 charmotor.movement.gravity = 0;
+                charmotor.SetVelocity(Vector3.zero);
             }
             else if (rigidbody)
             {
@@ -35,6 +36,7 @@ public class Funnelable : MonoBehaviour
                 rigidbody.velocity = new Vector3(0, 0, 0);
                 rigidbody.angularVelocity = new Vector3(0, 0, 0);
                 rigidbody.rotation = Quaternion.identity;
+                rigidbody.freezeRotation = true;
             }
         }
     }
@@ -51,6 +53,7 @@ public class Funnelable : MonoBehaviour
             else
             {
                 transform.transform.Translate(dir, Space.World);
+                rigidbody.velocity = new Vector3(0, 0, 0);
             }
             if (Fan.FunnelOff)
             {
@@ -78,6 +81,7 @@ public class Funnelable : MonoBehaviour
         else if (rigidbody)
         {
             rigidbody.useGravity = true;
+            rigidbody.freezeRotation = false;
         }
     }
 }

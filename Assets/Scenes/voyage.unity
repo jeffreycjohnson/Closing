@@ -1226,6 +1226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets:
   - {fileID: 1722205385}
+  OffMaterial: {fileID: 2100000, guid: 783496e6244db684797ee6fe1afdff73, type: 2}
+  OnMaterial: {fileID: 2100000, guid: 4793ce529d5350e4fa18e64dfe71a2ed, type: 2}
   ActivatorType: 2
 --- !u!23 &356490106
 Renderer:
@@ -4046,7 +4048,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9621c342c5852334491ea2ec53035d8f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

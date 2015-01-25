@@ -1687,7 +1687,7 @@ GameObject:
   - 23: {fileID: 1693987538}
   - 114: {fileID: 1693987537}
   - 64: {fileID: 1693987536}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: FunnelEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
