@@ -76,7 +76,7 @@ public class Funnelable : MonoBehaviour
         if (charmotor)
         {
             charmotor.movement.gravity = 10;
-            GetComponent<CharacterController>().stepOffset = 0.4f;
+            GetComponent<CharacterController>().stepOffset = 0.2f;
         }
         else if (rigidbody)
         {

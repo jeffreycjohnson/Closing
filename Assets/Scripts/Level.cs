@@ -36,13 +36,22 @@ public class Level : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Restart") && index == LevelIndex-2)
+        {
+            LevelIndex = 0;
+            _first = true;
+            _levelPos = new Vector3(0, 0, 0);
+            LevelLoader.NewSkip = index;
+            Application.LoadLevel(0);
+            Placeable.Restart();
+        }
         Screen.lockCursor = true;
         GameObject player = GameObject.Find("Player");
         if (!player) return;
         if (!_found && player.transform.position.x > transform.position.x)
         {
             _found = true;
-            if (index >= FindObjectOfType<LevelLoader>().Skip)
+            if (index > FindObjectOfType<LevelLoader>().Skip)
             {
                 GameObject level = GameObject.Find(SceneNames[index]);
                 level.GetComponentInChildren<DoorClose>().doneMoving = true;
