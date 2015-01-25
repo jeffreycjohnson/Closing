@@ -25,7 +25,7 @@ public class SlideController : MonoBehaviour {
                 selected.rotation = hit.transform.rotation;
             }
         }
-        if (Input.GetButtonDown("Fire2") && !Sliding)
+        if (Input.GetButtonDown("Slide") && !Sliding)
 	    {
             Sliding = true;
 	        _timer = 0;

@@ -20,7 +20,7 @@ public class Activator : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (ActivatorType == Type.Button && Input.GetButtonDown("Fire1"))
+	    if (ActivatorType == Type.Button && Input.GetButtonDown("Place"))
         {
 	        Transform t = GameObject.Find("Main Camera").transform;
 	        RaycastHit hit;
@@ -36,7 +36,7 @@ public class Activator : MonoBehaviour
                 }
 	        }
 	    }
-	    if (Input.GetButtonUp("Fire1"))
+	    if (Input.GetButtonUp("Place"))
 	    {
 	        ButtonDown = false;
 	    }

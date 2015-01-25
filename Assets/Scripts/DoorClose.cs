@@ -28,6 +28,9 @@ public class DoorClose : MonoBehaviour
             Vector3 pos = transform.position;
             transform.position = Vector3.Lerp(new Vector3(pos.x, endY + closeDist, pos.z), new Vector3(pos.x, endY, pos.z), elapsed / CloseTime);
             RenderSettings.ambientLight = new Color(c.x, c.y, c.z, c.w);
+            Color light = Color.Lerp(Color.green, Color.red, elapsed/CloseTime);
+            transform.GetChild(0).GetComponent<MeshRenderer>().material.color = light;
+            transform.GetChild(0).GetChild(0).GetComponent<Light>().color = light;
             if (transform.position.y <= endY)
             {
                 doneMoving = true;
