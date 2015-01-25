@@ -380,7 +380,7 @@ MonoBehaviour:
   Targets:
   - {fileID: 1694036365}
   - {fileID: 1806814906}
-  ActivatorType: 0
+  ActivatorType: 2
 --- !u!23 &182277020
 Renderer:
   m_ObjectHideFlags: 0
@@ -1964,7 +1964,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 6f9204b457fb3494c95b85b6a2f0406a, type: 2}
       propertyPath: ActivatorType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 6f9204b457fb3494c95b85b6a2f0406a, type: 2}
       propertyPath: Targets.Array.data[0]
