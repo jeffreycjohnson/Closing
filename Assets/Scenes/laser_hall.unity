@@ -2934,6 +2934,7 @@ GameObject:
   - 114: {fileID: 1474726075}
   - 54: {fileID: 1474726074}
   - 114: {fileID: 1474726080}
+  - 114: {fileID: 1474726081}
   m_Layer: 8
   m_Name: CarryCube
   m_TagString: CarryCube
@@ -3021,7 +3022,7 @@ Transform:
   m_PrefabInternal: {fileID: 1885547537}
   m_GameObject: {fileID: 1474726073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.64574814, y: -.311034918, z: -.909717083}
+  m_LocalPosition: {x: 1.64999998, y: 1.09000003, z: -.550000012}
   m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children: []
   m_Father: {fileID: 1521209989}
@@ -3036,6 +3037,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 328c608eb47ebeb4e9b5ceeb416c8a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1474726081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474726073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f31fd38458e484d8ad7c9653459890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1489932775
@@ -3582,15 +3594,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.64574814
+      value: 1.64999998
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.311034918
+      value: 1.09000003
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.909717083
+      value: -.550000012
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
       propertyPath: m_LocalRotation.x

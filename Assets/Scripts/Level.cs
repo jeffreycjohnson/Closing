@@ -52,9 +52,18 @@ public class Level : MonoBehaviour
 
             GameObject level2 = GameObject.Find(SceneNames[index + 1]);
             level2.GetComponentInChildren<DoorClose>().doneMoving = false;
+            
             foreach (PlatformController pc in level2.GetComponentsInChildren<PlatformController>())
             {
                 pc.ShouldMove = true;
+            }
+
+            FallController[] fcn =
+				level2.GetComponentsInChildren<FallController>();
+
+            foreach (FallController fc in fcn)
+            {
+                fc.Falling = true;
             }
 
 			if (index + 1 < SceneNames.Length) index++;
