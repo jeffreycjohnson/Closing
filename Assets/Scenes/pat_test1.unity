@@ -1835,7 +1835,6 @@ MonoBehaviour:
   OffsetX: 9
   OffsetY: 0
   OffsetZ: 0
-  LevelSkip: 0
 --- !u!1001 &1426597108
 Prefab:
   m_ObjectHideFlags: 0

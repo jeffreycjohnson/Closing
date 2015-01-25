@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Activator : MonoBehaviour
 {
-    public Transform Target;
+    public Target[] Targets;
 
     public bool ButtonDown { get; private set; }
 
@@ -27,8 +27,10 @@ public class Activator : MonoBehaviour
             {
 	            if (hit.collider == transform.GetComponent<Collider>())
                 {
-                    Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
-                    ButtonDown = true;
+                    foreach (Target ta in Targets)
+                    {
+                        ta.Running = !ta.Running;
+                    }
                 }
 	        }
 	    }
@@ -42,7 +44,11 @@ public class Activator : MonoBehaviour
     {
         if (ColliderIsOurType(col))
         {
-            Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
+            foreach (Target t in Targets)
+            {
+                t.Running = !t.Running;
+            }
+            //Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
         }
     }
 
@@ -50,7 +56,10 @@ public class Activator : MonoBehaviour
     {
         if (ColliderIsOurType(col))
         {
-            Target.GetComponent<Target>().Running = !Target.GetComponent<Target>().Running;
+            foreach (Target t in Targets)
+            {
+                t.Running = !t.Running;
+            }
         }
     }
 
