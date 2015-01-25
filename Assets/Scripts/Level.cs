@@ -14,7 +14,7 @@ public class Level : MonoBehaviour
 
     public static string[] SceneNames = { "intro1", "intro2", "box_intro1", "box_intro2", "box_stack", "air_sensor",
                                           "intro_funnel", "funnel_pit", "heavy_search", "heavy_intro", "voyage",
-                                          "step_down" };
+                                          "box_platform_simple", "step_down" };
 
     void Start()
     {
@@ -57,7 +57,7 @@ public class Level : MonoBehaviour
                 level.GetComponentInChildren<DoorClose>().doneMoving = true;
                 foreach (PlatformController pc in level.GetComponentsInChildren<PlatformController>())
 				{
-					pc.ShouldMove = false;
+                    pc.ShouldMove = false;
 				}
             }
 
@@ -66,7 +66,8 @@ public class Level : MonoBehaviour
             
             foreach (PlatformController pc in level2.GetComponentsInChildren<PlatformController>())
             {
-                pc.ShouldMove = true;
+                pc.ShouldMove = pc.GetComponent<Target>().Running;
+                pc.LevelReached = true;
             }
 
             FallController[] fcn =
