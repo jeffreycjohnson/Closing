@@ -35,7 +35,5 @@ public class PlatformController : MonoBehaviour
 	void OnCollisionEnter(Collision col)
 	{
 		_movingPositively = !_movingPositively;
-
-		Debug.Log("WE COLLIDIN HOLY HELL");
 	}
 }
