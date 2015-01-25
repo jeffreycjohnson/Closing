@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using System.Collections;
+using System;
 
 public class Level : MonoBehaviour
 {
@@ -10,11 +12,13 @@ public class Level : MonoBehaviour
     private int index;
     private static bool _first = true;
 
+    public static string[] SceneNames = { "pat_test2", "laser_hall", "intro_funnel", "voyage", "air_sensor" };
+
     void Start()
     {
         if (GameObject.Find("Player") == null)
         {
-            LevelIndex = Application.loadedLevel;
+            LevelIndex = Array.FindIndex(SceneNames, 0, x => x.Contains(Application.loadedLevelName));
             Application.LoadLevelAdditive(0);
             LevelLoader.NewSkip = LevelIndex;
         }
@@ -30,44 +34,40 @@ public class Level : MonoBehaviour
 
     void Update()
     {
+        LevelLoader loader = FindObjectOfType<LevelLoader>();
+
         Screen.lockCursor = true;
         if (!_found && GameObject.Find("Player").transform.position.x > transform.position.x)
         {
             _found = true;
-            if (index > GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Skip)
+            if (index > loader.Skip)
             {
-                GameObject.Find("Level " + index).GetComponentInChildren<DoorClose>().doneMoving = true;
-
-				PlatformController[] pcs = 
-					GameObject.Find("Level " + index).GetComponentsInChildren<PlatformController>();
-
-				foreach (PlatformController pc in pcs)
+                GameObject level = GameObject.Find(SceneNames[index]);
+                level.GetComponentInChildren<DoorClose>().doneMoving = true;
+                foreach (PlatformController pc in level.GetComponentsInChildren<PlatformController>())
 				{
 					pc.ShouldMove = false;
 				}
             }
-            GameObject.Find("Level " + (index + 1)).GetComponentInChildren<DoorClose>().doneMoving = false;
 
-			PlatformController[] pcsn = 
-				GameObject.Find("Level " + (index + 1)).GetComponentsInChildren<PlatformController>();
-			
-			foreach (PlatformController pc in pcsn)
-			{
-				pc.ShouldMove = true;
-			}
+            GameObject level2 = GameObject.Find(SceneNames[index + 1]);
+            level2.GetComponentInChildren<DoorClose>().doneMoving = false;
+            foreach (PlatformController pc in level2.GetComponentsInChildren<PlatformController>())
+            {
+                pc.ShouldMove = true;
+            }
 
-			if (index + 1 < Application.levelCount) index++;
-
-			Next ();
+			if (index + 1 < SceneNames.Length) index++;
+			Next();
         }
     }
 
     public static void Next()
     {
-        if (LevelIndex + 1 < Application.levelCount)
+        if (LevelIndex + 1 < SceneNames.Length)
         {
             LevelIndex++;
-            Application.LoadLevelAdditive(LevelIndex);
+            Application.LoadLevelAdditive(SceneNames[Level.LevelIndex]);
         }
     }
 }
