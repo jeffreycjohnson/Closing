@@ -23,7 +23,7 @@ public class Activator : MonoBehaviour
         {
 	        Transform t = GameObject.Find("Main Camera").transform;
 	        RaycastHit hit;
-	        if (Physics.Raycast(t.position, t.TransformDirection(Vector3.forward), out hit, 1))
+	        if (Physics.Raycast(t.position, t.TransformDirection(Vector3.forward), out hit))
             {
 	            if (hit.collider == transform.GetComponent<Collider>())
                 {
