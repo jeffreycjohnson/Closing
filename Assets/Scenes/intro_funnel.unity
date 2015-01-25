@@ -766,6 +766,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0e93aa9b057cadd48bd72c4cbf7693be, type: 2}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 1275230477}
+    - target: {fileID: 11400000, guid: 0e93aa9b057cadd48bd72c4cbf7693be, type: 2}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 1156649097}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e93aa9b057cadd48bd72c4cbf7693be, type: 2}
   m_RootGameObject: {fileID: 1693987535}
@@ -870,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caddbfabd55f5d24ba94d49baab8f30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloseTime: 10
+  CloseTime: 20
   closeDist: 1
   doneMoving: 1
 --- !u!23 &1156649100
@@ -925,7 +933,7 @@ GameObject:
   - 4: {fileID: 1275230478}
   - 114: {fileID: 1275230479}
   m_Layer: 0
-  m_Name: Level 6
+  m_Name: intro_funnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1490,6 +1498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GhostPrefab: {fileID: 100000, guid: 5598c6ba97c9c5440aef8da585e40ee6, type: 2}
   PushDistance: .0500000007
+  Door: {fileID: 1156649097}
 --- !u!23 &1693987538
 Renderer:
   m_ObjectHideFlags: 0

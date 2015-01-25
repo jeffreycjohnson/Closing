@@ -208,7 +208,7 @@ GameObject:
   - 4: {fileID: 170729097}
   - 114: {fileID: 170729098}
   m_Layer: 0
-  m_Name: Level 7
+  m_Name: air_sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +221,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170729096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1482413241}
@@ -1219,6 +1219,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 170729096}
+    - target: {fileID: 11400000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 346326272}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54e0c28282b71a64c9a842717b3d4c7f, type: 2}
   m_RootGameObject: {fileID: 1482413240}
@@ -2479,6 +2487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GhostPrefab: {fileID: 100000, guid: 35bbfc58dcb48db4c98f70fd92633a03, type: 2}
   PushDistance: .25
+  Door: {fileID: 346326272}
 --- !u!23 &1482413245
 Renderer:
   m_ObjectHideFlags: 0

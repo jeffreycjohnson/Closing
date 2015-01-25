@@ -25,9 +25,10 @@ public class DoorClose : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             Vector4 c = Vector4.Lerp(color, new Vector4(0.0f, 0.0f), elapsed/CloseTime);
-            transform.Translate(0, -closeDist * Time.deltaTime / CloseTime, 0);
+            Vector3 pos = transform.position;
+            transform.position = Vector3.Lerp(new Vector3(pos.x, endY + closeDist, pos.z), new Vector3(pos.x, endY, pos.z), elapsed / CloseTime);
             RenderSettings.ambientLight = new Color(c.x, c.y, c.z, c.w);
-            if (transform.position.y < endY)
+            if (transform.position.y <= endY)
             {
                 doneMoving = true;
                 transform.position = new Vector3(transform.position.x, endY, transform.position.z);

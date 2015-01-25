@@ -9,6 +9,7 @@ public class Placeable : MonoBehaviour
     public GameObject GhostPrefab;
     private GameObject Ghost;
     public float PushDistance = 0.2f;
+    public GameObject Door;
 
 	void Start()
     {
@@ -39,9 +40,9 @@ public class Placeable : MonoBehaviour
         Ray ray = FindObjectOfType<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         bool raycastpickup = Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 8);
-        
-        
-        if (raycastpickup && !Ghost.activeSelf && hit.transform.gameObject == gameObject && Input.GetMouseButtonDown(0) && !placing)
+
+
+        if (raycastpickup && !Ghost.activeSelf && hit.transform.gameObject == gameObject && Input.GetButtonDown("Fire1") && !placing)
         {
             Ghost.SetActive(true);
             placing = true;
@@ -74,11 +75,17 @@ public class Placeable : MonoBehaviour
                 Ghost.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
             }
 
-            if (Input.GetMouseButtonDown(0) && raycastdrop)
+            if (Input.GetButtonDown("Fire1") && raycastdrop)
             {
                 Ghost.SetActive(false);
                 transform.position = Ghost.transform.position;
                 transform.rotation = Ghost.transform.rotation;
+                shouldchangeplacing = true;
+            }
+
+            if (Door.GetComponent<DoorClose>().doneMoving)
+            {
+                Ghost.SetActive(false);
                 shouldchangeplacing = true;
             }
         }
