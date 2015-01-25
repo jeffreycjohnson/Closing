@@ -13,13 +13,18 @@ public class Funnelable : MonoBehaviour
         charmotor = GetComponent<CharacterMotor>();
     }
 
+    void FixedUpdate()
+    {
+        if (rigidbody && rigidbody.IsSleeping()) rigidbody.WakeUp();
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Funnel" || other.gameObject.tag == "Fan")
+        if (other.gameObject.tag == "Funnel")
         {
             funnel = other.gameObject;
 
-            if (charmotor && other.gameObject.tag == "Funnel")
+            if (charmotor)
             {
                 GetComponent<CharacterController>().stepOffset = 0;
                 charmotor.movement.gravity = 0;
@@ -54,7 +59,7 @@ public class Funnelable : MonoBehaviour
 	}
     void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.tag == "Funnel" || collider.gameObject.tag == "Fan")
+        if (collider.gameObject.tag == "Funnel")
         {
             ExitFunnel();
         }

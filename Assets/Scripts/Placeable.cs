@@ -43,7 +43,8 @@ public class Placeable : MonoBehaviour
         RaycastHit hit;
         bool raycastpickup = Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 8);
 
-        if (raycastpickup && !Ghost.activeSelf && (hit.transform.gameObject == gameObject || hit.transform == transform.parent) && Input.GetButtonDown("Place") && !placing)
+        if (raycastpickup && !Ghost.activeSelf && (hit.transform.gameObject == gameObject || hit.transform == transform.parent)
+            && Input.GetButtonDown("Place") && !placing && !Door.GetComponent<DoorClose>().doneMoving)
         {
             Ghost.SetActive(true);
             placing = true;
@@ -75,8 +76,10 @@ public class Placeable : MonoBehaviour
             else if (hit.normal == Vector3.right) {
                 Ghost.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
             }
+            bool pastDoor = Ghost.transform.position.x > Door.transform.position.x;
+            if (pastDoor || !raycastdrop) Ghost.transform.position = new Vector3(-1000, 0, 0); // programming
 
-            if (Input.GetButtonDown("Place") && raycastdrop)
+            if (Input.GetButtonDown("Place") && raycastdrop && !pastDoor)
             {
                 Ghost.SetActive(false);
                 transform.position = Ghost.transform.position;
