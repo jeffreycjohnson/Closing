@@ -20,6 +20,7 @@ public class SlideController : MonoBehaviour {
                 selected.GetComponent<MeshRenderer>().enabled = true;
                 selected.position = hit.transform.position;
                 selected.localScale = hit.transform.localScale * 1.1f;
+                selected.rotation = hit.transform.rotation;
             }
         }
 	    if (Input.GetButtonDown("Submit") && !Sliding)
