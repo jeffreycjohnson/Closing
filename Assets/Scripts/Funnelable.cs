@@ -28,6 +28,7 @@ public class Funnelable : MonoBehaviour
             {
                 GetComponent<CharacterController>().stepOffset = 0;
                 charmotor.movement.gravity = 0;
+                charmotor.movement.velocity = new Vector3(0f, 0f, 0f);
                 //charmotor.SetVelocity(Vector3.zero);
             }
             else if (rigidbody)
