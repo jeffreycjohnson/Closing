@@ -37,7 +37,7 @@ public class Level : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Restart") && index == LevelIndex-2 || ShouldRestart)
+        if ((Input.GetButtonDown("Restart") || ShouldRestart) && index == LevelIndex - 2)
         {
             LevelIndex = 0;
             _first = true;
