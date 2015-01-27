@@ -53,7 +53,7 @@ public class Level : MonoBehaviour
         if (!_found && player.transform.position.x > transform.position.x)
         {
             _found = true;
-            if (index > FindObjectOfType<LevelLoader>().Skip)
+            if (index > FindObjectOfType<LevelLoader>().Skip - 1)
             {
                 GameObject level = GameObject.Find(SceneNames[index]);
                 level.GetComponentInChildren<DoorClose>().doneMoving = true;

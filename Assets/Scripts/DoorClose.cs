@@ -14,7 +14,7 @@ public class DoorClose : MonoBehaviour
 
 	void Start()
 	{
-        endY = transform.position.y;
+        endY = transform.localPosition.y;
         transform.transform.transform.Translate(0, closeDist, 0);
 	}
 	
@@ -25,16 +25,16 @@ public class DoorClose : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             Vector4 c = Vector4.Lerp(color, new Vector4(0.0f, 0.0f), elapsed/CloseTime);
-            Vector3 pos = transform.position;
-            transform.position = Vector3.Lerp(new Vector3(pos.x, endY + closeDist, pos.z), new Vector3(pos.x, endY, pos.z), elapsed / CloseTime);
+            Vector3 pos = transform.localPosition;
+            transform.localPosition = Vector3.Lerp(new Vector3(pos.x, endY + closeDist, pos.z), new Vector3(pos.x, endY, pos.z), elapsed / CloseTime);
             RenderSettings.ambientLight = new Color(c.x, c.y, c.z, c.w);
             Color light = Color.Lerp(Color.green, Color.red, elapsed/CloseTime);
             transform.GetChild(0).GetComponent<MeshRenderer>().material.color = light;
             transform.GetChild(0).GetChild(0).GetComponent<Light>().color = light;
-            if (transform.position.y <= endY)
+            if (transform.localPosition.y <= endY)
             {
                 doneMoving = true;
-                transform.position = new Vector3(transform.position.x, endY, transform.position.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, endY, transform.localPosition.z);
                 // hook for restart level and stuff here
             }
         }
