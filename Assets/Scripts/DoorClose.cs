@@ -35,7 +35,6 @@ public class DoorClose : MonoBehaviour
             {
                 doneMoving = true;
                 transform.position = new Vector3(transform.position.x, endY, transform.position.z);
-                Debug.Log("Door closed");
                 // hook for restart level and stuff here
             }
         }

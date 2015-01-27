@@ -908,7 +908,7 @@ GameObject:
   - 4: {fileID: 571663868}
   - 114: {fileID: 571663867}
   m_Layer: 0
-  m_Name: heavy_intro
+  m_Name: heavy_push1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -69,7 +69,6 @@ public class Placeable : MonoBehaviour
             pushout.Scale(new Vector3(PushDistance, PushDistance, PushDistance));
             Ghost.transform.position = hit.point + pushout;
 
-            Vector3 vec = hit.normal;
             if (hit.normal == Vector3.up) {
                 Ghost.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }

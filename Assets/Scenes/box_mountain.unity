@@ -409,7 +409,7 @@ GameObject:
   - 4: {fileID: 312069642}
   - 114: {fileID: 312069643}
   m_Layer: 0
-  m_Name: box_pile
+  m_Name: box_mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1097,7 +1097,7 @@ GameObject:
   - 4: {fileID: 1275230478}
   - 114: {fileID: 1275230479}
   m_Layer: 0
-  m_Name: intro_funnel
+  m_Name: funnel_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

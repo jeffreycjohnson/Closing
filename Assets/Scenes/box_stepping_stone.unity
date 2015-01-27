@@ -3017,7 +3017,7 @@ Transform:
   m_GameObject: {fileID: 969619082}
   m_LocalRotation: {x: 0, y: .382683486, z: 0, w: .923879564}
   m_LocalPosition: {x: 4.03399992, y: -.56099999, z: .0370000005}
-  m_LocalScale: {x: 1, y: 1, z: 1.29999995}
+  m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 1.29999995}
   m_Children:
   - {fileID: 1975483168}
   - {fileID: 2144586097}
@@ -6751,7 +6751,7 @@ GameObject:
   - 4: {fileID: 1887454431}
   - 114: {fileID: 1887454432}
   m_Layer: 0
-  m_Name: stepping_stone
+  m_Name: box_stepping_stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

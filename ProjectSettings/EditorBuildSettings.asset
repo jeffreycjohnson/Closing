@@ -8,42 +8,38 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
   - enabled: 1
-    path: Assets/Scenes/pat_test1.unity
+    path: Assets/Scenes/unused/jalo_test1.unity
   - enabled: 1
-    path: Assets/Scenes/pat_test2.unity
+    path: Assets/Scenes/unused/box_laser_hall.unity
   - enabled: 1
-    path: Assets/Scenes/jalo_test1.unity
+    path: Assets/Scenes/heavy_push2.unity
   - enabled: 1
-    path: Assets/Scenes/laser_hall.unity
+    path: Assets/Scenes/funnel_up.unity
   - enabled: 1
-    path: Assets/Scenes/voyage.unity
+    path: Assets/Scenes/box_air_sensor.unity
   - enabled: 1
-    path: Assets/Scenes/intro_funnel.unity
-  - enabled: 1
-    path: Assets/Scenes/air_sensor.unity
-  - enabled: 1
-    path: Assets/Scenes/intro_fan.unity
+    path: Assets/Scenes/fan_up.unity
   - enabled: 1
     path: Assets/Scenes/box_intro1.unity
   - enabled: 1
     path: Assets/Scenes/box_intro2.unity
   - enabled: 1
-    path: Assets/Scenes/box_pile.unity
+    path: Assets/Scenes/box_mountain.unity
   - enabled: 1
-    path: Assets/Scenes/step_down.unity
+    path: Assets/Scenes/unused/step_down.unity
   - enabled: 1
-    path: Assets/Scenes/intro1.unity
+    path: Assets/Scenes/intro_run1.unity
   - enabled: 1
     path: Assets/Scenes/box_stack.unity
   - enabled: 1
-    path: Assets/Scenes/funnel_pit.unity
+    path: Assets/Scenes/funnel_cross_pit.unity
   - enabled: 1
     path: Assets/Scenes/heavy_search.unity
   - enabled: 1
-    path: Assets/Scenes/heavy_intro.unity
+    path: Assets/Scenes/heavy_push1.unity
   - enabled: 1
-    path: Assets/Scenes/intro2.unity
+    path: Assets/Scenes/intro_run2.unity
   - enabled: 1
     path: Assets/Scenes/box_platform_simple.unity
   - enabled: 1
-    path: Assets/Scenes/stepping_stone.unity
+    path: Assets/Scenes/box_stepping_stone.unity

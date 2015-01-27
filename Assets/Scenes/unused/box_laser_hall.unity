@@ -3416,7 +3416,7 @@ GameObject:
   - 4: {fileID: 1521209989}
   - 114: {fileID: 1521209990}
   m_Layer: 0
-  m_Name: laser_hall
+  m_Name: box_laser_hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

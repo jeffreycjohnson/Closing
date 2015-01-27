@@ -827,7 +827,7 @@ GameObject:
   - 4: {fileID: 636509332}
   - 114: {fileID: 636509333}
   m_Layer: 0
-  m_Name: intro2
+  m_Name: intro_run2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
