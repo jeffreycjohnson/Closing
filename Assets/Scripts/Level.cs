@@ -42,7 +42,7 @@ public class Level : MonoBehaviour
             LevelIndex = 0;
             _first = true;
             _levelPos = new Vector3(0, 0, 0);
-            LevelLoader.NewSkip = index;
+            LevelLoader.NewSkip = index > FindObjectOfType<LevelLoader>().Skip - 1 ? index : index + 1;
             Application.LoadLevel(0);
             Placeable.Restart();
             ShouldRestart = false;
@@ -87,9 +87,9 @@ public class Level : MonoBehaviour
 
     public static void Next()
     {
-        if (LevelIndex + 1 < SceneNames.Length)
+        LevelIndex++;
+        if (LevelIndex < SceneNames.Length)
         {
-            LevelIndex++;
             Application.LoadLevelAdditive(SceneNames[Level.LevelIndex]);
         }
     }
