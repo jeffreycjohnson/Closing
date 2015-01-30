@@ -65,7 +65,7 @@ public class Funnelable : MonoBehaviour
 	}
     void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.tag == "Funnel")
+        if (collider.gameObject.tag == "Funnel" && collider.gameObject == funnel)
         {
             ExitFunnel();
         }
