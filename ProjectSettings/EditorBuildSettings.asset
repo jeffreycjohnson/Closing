@@ -43,3 +43,5 @@ EditorBuildSettings:
     path: Assets/Scenes/box_platform_simple.unity
   - enabled: 1
     path: Assets/Scenes/box_stepping_stone.unity
+  - enabled: 1
+    path: Assets/Scenes/fan_box_funnel.unity
